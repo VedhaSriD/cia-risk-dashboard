@@ -41,6 +41,12 @@ The CIA Risk Dashboard is an **interactive web application** that identifies sec
 
 ---
 
+## 🌐 Live Demo
+
+**Live Application:** https://cia-risk-dashboard-ax2d.vercel.app/
+
+**Source Code:** https://github.com/VedhaSriD/cia-risk-dashboard 
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -51,7 +57,7 @@ The CIA Risk Dashboard is an **interactive web application** that identifies sec
 
 1. **Clone the repository**
    ```bash
-   git clone(https://github.com/VedhaSriD/cia-risk-dashboard)
+ git clone https://github.com/VedhaSriD/cia-risk-dashboard.git
    cd cia-risk-dashboard
    ```
 
@@ -161,7 +167,7 @@ cia-risk-dashboard/
 | **Charts & Visualization** | Recharts |
 | **Styling** | Custom CSS3 (Pastel theme) |
 | **Data** | JSON (predefined risks) |
-| **Deployment** | GitHub Pages / Vercel |
+| **Deployment** | Vercel |
 
 ---
 
@@ -340,9 +346,9 @@ Cryptography & Network Security Student
 
 ## 📧 Questions?
 
-Refer to the **DOCUMENTATION.md** file for detailed assignment information.
+Refer to the **DOCUMENTATION.md** file for detailed information.
 
 ---
 
-**Last Updated:** September 2024  
+**Last Updated:** September 2026 
 **Status:** ✅ Complete
