@@ -51,7 +51,7 @@ The CIA Risk Dashboard is an **interactive web application** that identifies sec
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/cia-risk-dashboard.git
+   git clone(https://github.com/VedhaSriD/cia-risk-dashboard)
    cd cia-risk-dashboard
    ```
 
@@ -296,8 +296,7 @@ vercel
 ### Deploy to GitHub Pages
 ```bash
 # Add this to package.json
-"homepage": "https://YOUR_USERNAME.github.io/cia-risk-dashboard"
-
+"homepage":(https://github.com/VedhaSriD/cia-risk-dashboard)
 # Build and deploy
 npm run build
 npm install -g gh-pages
@@ -324,7 +323,7 @@ MIT License - Feel free to use this project for educational purposes
 
 ## 👨‍💻 Author
 
-**Your Name**  
+Vedha Sri Dumpati 
 CSE Panthers 2024  
 Cryptography & Network Security Student
 
@@ -346,4 +345,4 @@ Refer to the **DOCUMENTATION.md** file for detailed assignment information.
 ---
 
 **Last Updated:** September 2024  
-**Status:** ✅ Complete & Ready for Submission
+**Status:** ✅ Complete
