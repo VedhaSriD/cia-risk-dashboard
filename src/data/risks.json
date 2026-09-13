@@ -1,0 +1,434 @@
+{
+  "systems": [
+    {
+      "id": "banking",
+      "name": "🏦 Banking System",
+      "description": "Online banking platform with customer accounts and transactions",
+      "icon": "🏦",
+      "baseRisks": [
+        {
+          "id": "r1",
+          "name": "SQL Injection Attack",
+          "description": "Attacker injects malicious SQL code to access customer database and steal financial information",
+          "cia": {
+            "confidentiality": 85,
+            "integrity": 70,
+            "availability": 10
+          },
+          "attackType": "🔓 Data Breach",
+          "severity": "CRITICAL",
+          "realWorldExample": "Similar to attacks on banking APIs",
+          "controls": [
+            {
+              "id": "c1",
+              "name": "Input Validation",
+              "description": "Validate and sanitize all user inputs",
+              "effectiveness": 85,
+              "cost": 30000
+            },
+            {
+              "id": "c2",
+              "name": "WAF (Web Application Firewall)",
+              "description": "Blocks malicious requests before reaching the application",
+              "effectiveness": 95,
+              "cost": 50000
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "name": "Man-in-the-Middle (MITM) Attack",
+          "description": "Attacker intercepts communication between client and server, stealing login credentials and transaction data",
+          "cia": {
+            "confidentiality": 90,
+            "integrity": 75,
+            "availability": 0
+          },
+          "attackType": "🕵️ Network Attack",
+          "severity": "CRITICAL",
+          "realWorldExample": "Public WiFi banking interception",
+          "controls": [
+            {
+              "id": "c3",
+              "name": "TLS/SSL Encryption",
+              "description": "Encrypts data in transit with strong cryptography",
+              "effectiveness": 98,
+              "cost": 10000
+            },
+            {
+              "id": "c4",
+              "name": "Certificate Pinning",
+              "description": "Ensures mobile apps connect only to legitimate servers",
+              "effectiveness": 90,
+              "cost": 5000
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "name": "DDoS Attack",
+          "description": "Attacker floods server with requests, making banking services unavailable for legitimate users",
+          "cia": {
+            "confidentiality": 0,
+            "integrity": 0,
+            "availability": 95
+          },
+          "attackType": "💥 Denial of Service",
+          "severity": "HIGH",
+          "realWorldExample": "2016 Dyn DDoS attack affecting major sites",
+          "controls": [
+            {
+              "id": "c5",
+              "name": "Rate Limiting",
+              "description": "Limits number of requests from single source",
+              "effectiveness": 60,
+              "cost": 20000
+            },
+            {
+              "id": "c6",
+              "name": "DDoS Protection Service",
+              "description": "Cloud-based DDoS mitigation (e.g., Cloudflare, Akamai)",
+              "effectiveness": 95,
+              "cost": 80000
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "name": "Phishing Attack",
+          "description": "Attackers send fake emails impersonating the bank to steal customer credentials",
+          "cia": {
+            "confidentiality": 80,
+            "integrity": 0,
+            "availability": 0
+          },
+          "attackType": "👤 Social Engineering",
+          "severity": "HIGH",
+          "realWorldExample": "PayPal, Amazon phishing campaigns",
+          "controls": [
+            {
+              "id": "c7",
+              "name": "Email Security & DMARC",
+              "description": "SPF, DKIM, DMARC authentication protocols",
+              "effectiveness": 85,
+              "cost": 15000
+            },
+            {
+              "id": "c8",
+              "name": "User Security Awareness Training",
+              "description": "Regular training on identifying phishing",
+              "effectiveness": 70,
+              "cost": 25000
+            }
+          ]
+        },
+        {
+          "id": "r5",
+          "name": "Weak Password Policies",
+          "description": "Users create weak passwords, allowing brute force attacks to compromise accounts",
+          "cia": {
+            "confidentiality": 75,
+            "integrity": 50,
+            "availability": 0
+          },
+          "attackType": "🔑 Authentication Bypass",
+          "severity": "HIGH",
+          "realWorldExample": "LinkedIn, Yahoo password breaches",
+          "controls": [
+            {
+              "id": "c9",
+              "name": "Multi-Factor Authentication (MFA)",
+              "description": "Requires password + second factor (SMS, app, hardware)",
+              "effectiveness": 95,
+              "cost": 40000
+            },
+            {
+              "id": "c10",
+              "name": "Password Manager & Policy Enforcement",
+              "description": "Enforce strong passwords and complexity requirements",
+              "effectiveness": 85,
+              "cost": 20000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "🏥 Healthcare System",
+      "description": "Hospital patient management and medical records system",
+      "icon": "🏥",
+      "baseRisks": [
+        {
+          "id": "r6",
+          "name": "Ransomware Attack",
+          "description": "Malware encrypts patient records and system files, demanding payment for decryption",
+          "cia": {
+            "confidentiality": 90,
+            "integrity": 100,
+            "availability": 95
+          },
+          "attackType": "🦠 Malware",
+          "severity": "CRITICAL",
+          "realWorldExample": "2017 WannaCry attacked UK NHS hospitals",
+          "controls": [
+            {
+              "id": "c11",
+              "name": "Regular Backups & Disaster Recovery",
+              "description": "Offline backups and tested recovery procedures",
+              "effectiveness": 98,
+              "cost": 60000
+            },
+            {
+              "id": "c12",
+              "name": "Endpoint Protection & EDR",
+              "description": "Advanced threat detection and response",
+              "effectiveness": 90,
+              "cost": 45000
+            }
+          ]
+        },
+        {
+          "id": "r7",
+          "name": "Insider Threat - Data Exfiltration",
+          "description": "Disgruntled employee or contractor steals patient medical records for sale",
+          "cia": {
+            "confidentiality": 95,
+            "integrity": 0,
+            "availability": 0
+          },
+          "attackType": "👤 Insider Threat",
+          "severity": "CRITICAL",
+          "realWorldExample": "Healthcare employee selling patient data",
+          "controls": [
+            {
+              "id": "c13",
+              "name": "Data Loss Prevention (DLP)",
+              "description": "Monitors and prevents unauthorized data transfer",
+              "effectiveness": 85,
+              "cost": 50000
+            },
+            {
+              "id": "c14",
+              "name": "Access Control & Monitoring",
+              "description": "Role-based access, audit logs, user behavior analytics",
+              "effectiveness": 80,
+              "cost": 35000
+            }
+          ]
+        },
+        {
+          "id": "r8",
+          "name": "Medical Device Tampering",
+          "description": "Attacker modifies medical device firmware/settings, affecting patient safety",
+          "cia": {
+            "confidentiality": 50,
+            "integrity": 100,
+            "availability": 90
+          },
+          "attackType": "⚙️ IoT/Device Attack",
+          "severity": "CRITICAL",
+          "realWorldExample": "FDA warnings on pacemaker vulnerabilities",
+          "controls": [
+            {
+              "id": "c15",
+              "name": "Device Firmware Security & Updates",
+              "description": "Secure boot, code signing, regular patches",
+              "effectiveness": 85,
+              "cost": 70000
+            },
+            {
+              "id": "c16",
+              "name": "Network Segmentation & ICS Firewall",
+              "description": "Isolate medical devices on dedicated networks",
+              "effectiveness": 90,
+              "cost": 55000
+            }
+          ]
+        },
+        {
+          "id": "r9",
+          "name": "Patient Privacy Breach (HIPAA Violation)",
+          "description": "Unauthorized access to sensitive patient health information (PHI)",
+          "cia": {
+            "confidentiality": 95,
+            "integrity": 20,
+            "availability": 0
+          },
+          "attackType": "🔓 Data Breach",
+          "severity": "HIGH",
+          "realWorldExample": "Anthem Health breach affecting 78M people",
+          "controls": [
+            {
+              "id": "c17",
+              "name": "Encryption of Data at Rest & In Transit",
+              "description": "AES-256, TLS 1.2+, encrypted databases",
+              "effectiveness": 95,
+              "cost": 40000
+            },
+            {
+              "id": "c18",
+              "name": "Access Control & Role-Based Permissions",
+              "description": "Only authorized staff access patient data",
+              "effectiveness": 85,
+              "cost": 30000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "name": "🛒 E-commerce Platform",
+      "description": "Online shopping system with payment processing",
+      "icon": "🛒",
+      "baseRisks": [
+        {
+          "id": "r10",
+          "name": "Credit Card Fraud",
+          "description": "Stolen credit card information used for unauthorized purchases",
+          "cia": {
+            "confidentiality": 85,
+            "integrity": 70,
+            "availability": 0
+          },
+          "attackType": "💳 Payment Fraud",
+          "severity": "HIGH",
+          "realWorldExample": "Target breach (2013): 40M cards stolen",
+          "controls": [
+            {
+              "id": "c19",
+              "name": "PCI-DSS Compliance & Tokenization",
+              "description": "Replace sensitive data with tokens, no CC storage",
+              "effectiveness": 95,
+              "cost": 50000
+            },
+            {
+              "id": "c20",
+              "name": "Fraud Detection System (ML-based)",
+              "description": "Real-time anomaly detection for suspicious transactions",
+              "effectiveness": 85,
+              "cost": 60000
+            }
+          ]
+        },
+        {
+          "id": "r11",
+          "name": "Cross-Site Scripting (XSS)",
+          "description": "Attacker injects malicious JavaScript to steal customer session cookies or credentials",
+          "cia": {
+            "confidentiality": 80,
+            "integrity": 60,
+            "availability": 0
+          },
+          "attackType": "🔓 Web Vulnerability",
+          "severity": "HIGH",
+          "realWorldExample": "eBay, Amazon XSS vulnerabilities",
+          "controls": [
+            {
+              "id": "c21",
+              "name": "Input/Output Encoding & CSP",
+              "description": "Sanitize inputs, Content Security Policy headers",
+              "effectiveness": 90,
+              "cost": 25000
+            },
+            {
+              "id": "c22",
+              "name": "Web Application Firewall (WAF)",
+              "description": "Blocks malicious requests before reaching app",
+              "effectiveness": 85,
+              "cost": 40000
+            }
+          ]
+        },
+        {
+          "id": "r12",
+          "name": "Inventory Database Tampering",
+          "description": "Attacker modifies product prices, inventory levels, or order details in the database",
+          "cia": {
+            "confidentiality": 20,
+            "integrity": 95,
+            "availability": 0
+          },
+          "attackType": "📊 Database Attack",
+          "severity": "CRITICAL",
+          "realWorldExample": "Retail systems price manipulation",
+          "controls": [
+            {
+              "id": "c23",
+              "name": "Database Encryption & Integrity Checks",
+              "description": "TDE, checksums, HMAC verification",
+              "effectiveness": 90,
+              "cost": 35000
+            },
+            {
+              "id": "c24",
+              "name": "Audit Logging & Change Management",
+              "description": "Track all database changes with immutable logs",
+              "effectiveness": 85,
+              "cost": 30000
+            }
+          ]
+        },
+        {
+          "id": "r13",
+          "name": "Account Takeover (ATO)",
+          "description": "Attacker gains access to customer accounts and makes purchases",
+          "cia": {
+            "confidentiality": 70,
+            "integrity": 80,
+            "availability": 0
+          },
+          "attackType": "👤 Authentication Attack",
+          "severity": "HIGH",
+          "realWorldExample": "Amazon, Apple account takeovers",
+          "controls": [
+            {
+              "id": "c25",
+              "name": "Multi-Factor Authentication (MFA)",
+              "description": "Email/SMS verification + authenticator apps",
+              "effectiveness": 95,
+              "cost": 35000
+            },
+            {
+              "id": "c26",
+              "name": "Behavioral Analytics & Risk Scoring",
+              "description": "Detect unusual login patterns and locations",
+              "effectiveness": 80,
+              "cost": 45000
+            }
+          ]
+        },
+        {
+          "id": "r14",
+          "name": "Website Downtime / Server Outage",
+          "description": "Infrastructure failure or network issue causes e-commerce site to be unavailable",
+          "cia": {
+            "confidentiality": 0,
+            "integrity": 0,
+            "availability": 95
+          },
+          "attackType": "💥 Infrastructure Failure",
+          "severity": "HIGH",
+          "realWorldExample": "AWS outages affecting millions",
+          "controls": [
+            {
+              "id": "c27",
+              "name": "High Availability & Load Balancing",
+              "description": "Multiple servers, geographic redundancy",
+              "effectiveness": 90,
+              "cost": 70000
+            },
+            {
+              "id": "c28",
+              "name": "Cloud Auto-Scaling & CDN",
+              "description": "AWS/Azure auto-scaling + CDN for static content",
+              "effectiveness": 85,
+              "cost": 50000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
